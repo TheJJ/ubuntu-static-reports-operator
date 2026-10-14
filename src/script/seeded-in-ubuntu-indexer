@@ -103,7 +103,16 @@ def parse_germinated_flavor(
         if "." in entry.name or "+" in entry.name:
             continue
         # Skip known non seed files
-        if entry.name.startswith(("all_", "all.", "structure_", "provides_")):
+        if entry.name.startswith(
+            (
+                "all_",
+                "all.",
+                "structure_",
+                "provides_",
+                "extra_",
+                "extra.",
+            )
+        ):
             continue
         if not entry.name.endswith(file_name_suffix):
             continue
